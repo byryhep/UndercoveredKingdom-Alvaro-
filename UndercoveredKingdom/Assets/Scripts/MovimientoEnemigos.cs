@@ -9,11 +9,11 @@ public class MovimientoEnemigos : MonoBehaviour
     public float speed;
     public bool movimiento = true;
     public bool linea = false;
-    public Vector3 direccion,rotacion;
-    public bool detectado;
+    public Vector3 direccion,rotacion, posicionConstante;
+    public bool detectado,golpeado;
     public Transform[] puntos;
     public int nextPoint;
-    public Vector3 posicionDistraccion;
+    public Transform posicionDistraccion;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class MovimientoEnemigos : MonoBehaviour
 
         if (puntos.Length > 0)
                 nextPoint = 0;
+        golpeado = false;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -47,27 +48,27 @@ public class MovimientoEnemigos : MonoBehaviour
         }
         else
         {
-            if (posicionDistraccion != null)
+            if (posicionConstante != null)
             {
-                posicionDistraccion = new Vector3(posicionDistraccion.x, transform.position.y, transform.position.z);
-                transform.position = Vector3.MoveTowards(transform.position, posicionDistraccion, speed * Time.deltaTime);
                 
-                    Vector3 miPosicion = new Vector3(transform.position.x, transform.position.y, 0);
-                    Vector3 nextPointPosition = new Vector3(posicionDistraccion.x, posicionDistraccion.y, 0);
-                    Vector3 direccion = posicionDistraccion - transform.position;
-                    Quaternion rotation = Quaternion.LookRotation(direccion, Vector3.forward);                  
-                    transform.rotation = rotation;
-                    Invoke("stopFollowing", 3);
-                    if(rotacion==Vector3.zero) LookToPoint(puntos[nextPoint]);
+                transform.position = Vector3.MoveTowards(transform.position, posicionConstante, speed * Time.deltaTime);
+                    
 
                 
             }
             else detectado = false;
             
         }
-
+        if (golpeado) Invoke("desactivar", 2);
     }
    
+    public void guardarTransform()
+    {
+       posicionConstante= posicionDistraccion.position;
+       LookToPoint(posicionDistraccion);
+        Invoke("stopFollowing", 2f);
+
+    }
 
     public void LookToPoint(Transform point)
     {
@@ -93,4 +94,10 @@ public class MovimientoEnemigos : MonoBehaviour
         detectado = false;
         LookToPoint(puntos[nextPoint]);
     }
+    public void desactivar()
+    {
+        gameObject.SetActive(false);
+    }
+
+
 }

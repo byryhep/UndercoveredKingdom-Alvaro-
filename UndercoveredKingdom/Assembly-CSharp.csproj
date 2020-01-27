@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BFEEAE07-FAF7-2B98-C3F2-646FE271A671}</ProjectGuid>
+    <ProjectGuid>{8A89370F-B602-AC4F-C7B8-35AFF8D30A34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bomba.cs" />
     <Compile Include="Assets\Scripts\cameraFollowing.cs" />
     <Compile Include="Assets\Scripts\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\ControladorMovimiento.cs" />
@@ -75,31 +76,31 @@
     <Compile Include="Assets\Scripts\TirarObjeto.cs" />
     <Compile Include="Assets\Scripts\Victoria.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Escritorio/UndercoveredKingdomProject/Undercovered Kingdom/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Escritorio/Undercovered Kingdoma/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

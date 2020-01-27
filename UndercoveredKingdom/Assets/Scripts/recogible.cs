@@ -5,6 +5,7 @@ using UnityEngine;
 public class recogible : MonoBehaviour
 {
     public Manager script;
+    public bool bomba, distraccion;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,10 @@ public class recogible : MonoBehaviour
             if (Input.GetButtonDown("Recoger"))
             {
 
-
-                script.objetoLanzables++;
+                if(distraccion)
+                    script.objetoLanzables++;
+                if (bomba)
+                    script.bombas++;
                 gameObject.SetActive(false);
             }
         }

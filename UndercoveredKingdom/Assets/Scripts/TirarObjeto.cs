@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TirarObjeto : MonoBehaviour
 {
-    public GameObject prefabObjeto,manager;
+    public GameObject prefabObjetoDistraccion,prefabBomba,manager;
     Manager scriptManager;
 
     private void Start()
@@ -14,12 +14,21 @@ public class TirarObjeto : MonoBehaviour
     private void Update()
     {
         if ((Input.GetButtonDown("Fire2"))&&(scriptManager.objetoLanzables>0)) tirarObjeto();
+        if ((Input.GetButtonDown("Fire1")) && (scriptManager.bombas > 0)) tirarBomba();
     }
     public void tirarObjeto()
     {
         scriptManager.objetoLanzables--;
 
-        Instantiate(prefabObjeto, transform.position,transform.rotation);
+        Instantiate(prefabObjetoDistraccion, transform.position,transform.rotation);
+
+    }
+
+    public void tirarBomba()
+    {
+        scriptManager.bombas--;
+
+        Instantiate(prefabBomba, transform.position, transform.rotation);
 
     }
 }

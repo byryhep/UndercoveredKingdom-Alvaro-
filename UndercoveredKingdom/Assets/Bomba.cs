@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjetoDistractorio : MonoBehaviour
+public class Bomba : MonoBehaviour
 {
     public Collider triger;
     public Vector3 direccion;
     public float speed;
+
+    public float radius = 20F;
+    public float power = 100000.0F;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,29 +30,37 @@ public class ObjetoDistractorio : MonoBehaviour
     {
 
         transform.position = Vector3.MoveTowards(transform.position, direccion, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, direccion) < 1f)
+        if (Vector3.Distance(transform.position, direccion) < 0.5f)
         {
-            triger.enabled = true;
+            explotar();
             Invoke("destruir", 0.1f);
 
         }
-        }
-   
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            MovimientoEnemigos script  = other.GetComponent<MovimientoEnemigos>();
-            script.detectado = true;
-            script.posicionDistraccion = transform;
-            script.guardarTransform();
-        }
-
     }
+    public void explotar()
+    {
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        foreach (Collider hit in colliders)
+        {
+            if (hit.gameObject.tag == "Enemy")
+            { 
+
+
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+                MovimientoEnemigos script = hit.GetComponent<MovimientoEnemigos>();
+                if (rb != null)
+                rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
+                script.golpeado=true;
+                hit.transform.GetChild(0).gameObject.SetActive(false);
+            }
+        }
+    }
+   
+    
     public void destruir()
     {
         Destroy(this.gameObject);
 
     }
-
 }

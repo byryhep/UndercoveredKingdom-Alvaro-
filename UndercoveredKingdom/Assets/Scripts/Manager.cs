@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class Manager : MonoBehaviour
 {
     public float tiempoLimite,tiempoActual;
-    public int objetoLanzables;
+    public int objetoLanzables,bombas;
     public GameObject player,enemigos, objetos;
-    public Text tiempo,items;
+    public Text tiempo,items,bombasText;
     public Vector3 respawn;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,7 @@ public class Manager : MonoBehaviour
         if (tiempoActual <= 0) Respawnea();
         items.text = objetoLanzables.ToString();
         tiempo.text = tiempoActual.ToString();
+        bombasText.text = bombas.ToString();
     }
 
     public void Respawnea()

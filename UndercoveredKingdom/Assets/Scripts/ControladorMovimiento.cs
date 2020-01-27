@@ -116,11 +116,12 @@ public class ControladorMovimiento : MonoBehaviour
     {
         if (other.gameObject.name == "EspaldaEnemigo")
         {
-            if (Input.GetButtonDown("Fire1"))
+
+            if (Input.GetButtonDown("Attack"))
             {
                 other.transform.parent.transform.parent.transform.parent.gameObject.SetActive(false);
             }
         }
     }
-
+    
 }
